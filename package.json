@@ -1,9 +1,9 @@
 {
-  "name": "form-cascade",
+  "name": "formcasa",
   "version": "1.1.0",
   "description": "Forms from JSON",
   "main": "index.js",
-  "repository": "https://github.com/lancetipton/form-cascade",
+  "repository": "https://github.com/lancetipton/FormCasa",
   "author": "Lance Tipton",
   "license": "MIT",
   "devDependencies": {

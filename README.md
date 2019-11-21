@@ -1,9 +1,9 @@
-# Form Cascade
-Forms from JSON
+# FormCasa
+Build React Forms from Cascade Object
 
 
 # Setup
   * Add to your package.json
 ```js
-  "form-cascade": "git+https://github.com/lancetipton/form-cascade.git"
+  "formCasa": "git+https://github.com/lancetipton/FormCasa.git"
 ```
