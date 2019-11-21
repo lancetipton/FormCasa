@@ -1,0 +1,30 @@
+{
+  "name": "form-cascade",
+  "version": "1.1.0",
+  "description": "Forms from JSON",
+  "main": "index.js",
+  "repository": "https://github.com/lancetipton/form-cascade",
+  "author": "Lance Tipton",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "rollup": "1.20.3",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-cleanup": "3.1.1",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-replace": "2.2.0",
+    "jsutils": "git+https://github.com/lancetipton/jsutils.git",
+    "cascader": "git+https://github.com/lancetipton/cascader.git",
+    "react": ">= 16.8.3",
+    "react-dom": ">= 16.8.6"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.3",
+    "react-dom": ">= 16.8.6",
+    "jsutils": "git+https://github.com/lancetipton/jsutils.git",
+    "cascader": "git+https://github.com/lancetipton/cascader.git"
+  }
+}
