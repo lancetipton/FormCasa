@@ -6,10 +6,10 @@ import { Select } from './select'
 import { Textbox } from './textbox'
 
 export {
-  Button as button
-  Form as form
-  Input as input
-  Radio as radio
-  Select as select
-  Textbox as textbox
+  Button,
+  Form,
+  Input,
+  Radio,
+  Select,
+  Textbox,
 }

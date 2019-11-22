@@ -2,6 +2,9 @@ import React from 'react'
 import { Form } from '../form'
 import { Register } from '../../services'
 import { buildNode } from '../../utils'
+import { Cascader } from 'cascader'
+import { isArr, isObj } from 'jsutils'
+import { formModel } from '../../models'
 
 const register = new Register()
 
@@ -49,8 +52,8 @@ const addFormRoot = props => {
 
   // Build the root cascade node from the formModel
   const formCascade = buildNode(
-    formModel.cascade.0,
-    formModel.cascade.1,
+    formModel.cascade[0],
+    formModel.cascade[1],
     props.cascade,
     props.catalog
   )
@@ -86,6 +89,7 @@ export const buildForm = props => {
  * @returns {React Component} - Rendered FormCasa Component
  */
 export const FormCasa = props => {
+  const { cascade } = props
   return !isArr(cascade) && !isObj(cascade) || (isObj(cascade) && !cascade['0'])
     ? formError()
     : buildForm(props)

@@ -1,0 +1,15 @@
+
+
+.container {
+  margin: 0px 10px;
+}
+.container .container-content {
+  padding: 0px 20px;
+}
+
+.header h1 {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #121212;
+}
+

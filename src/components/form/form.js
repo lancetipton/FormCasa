@@ -6,10 +6,9 @@ export const Form = props => {
     <form
       method={props.method}
       encType={props.encType}
-      action={prop.action}
+      action={props.action}
       // ---- Need to add forward Ref here ----
       // ref={ref => formComponent = ref}
-      className={state.schema.classes.form}
     >
       { props.children }
     </form>
