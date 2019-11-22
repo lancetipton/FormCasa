@@ -4,21 +4,35 @@ export const loginForm = {
   2: [
     {
       0: 'div',
-      1: { className: 'form-container', key: 'from-container' },
+      1: { className: 'form-container' },
       2: [
         {
           0: 'div',
-          1: { className: 'input-wrapper', key: 'input-wrapper' },
+          1: { className: 'input-wrapper' },
           2: [
             {
               0: 'label',
-              1: { className: 'input-label', htmlFor: 'email', key: 'email-label' },
-              2: [ 'Email' ]
+              1: { className: 'input-label', htmlFor: 'email-input' },
+              2: ['Email', { 0: 'br' }, ]
             },
             {
               0: 'input',
-              1: { className: 'input', name: 'email', type: 'email', key: 'email-input' },
-              2: []
+              1: { className: 'input', name: 'email', id: 'email-input', type: 'email' }
+            }
+          ]
+        },
+        {
+          0: 'div',
+          1: { className: 'input-wrapper' },
+          2: [
+            {
+              0: 'label',
+              1: { className: 'input-label', htmlFor: 'password-input' },
+              2: ['Password', { 0: 'br' }, ]
+            },
+            {
+              0: 'input',
+              1: { className: 'input', name: 'password', id: 'password-input', type: 'password' }
             }
           ]
         }
