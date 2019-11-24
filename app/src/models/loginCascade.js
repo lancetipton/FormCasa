@@ -1,10 +1,10 @@
-export const loginForm = {
+export const loginCascade = {
   0: 'form',
   1: { className: 'login-form' },
   2: [
     {
       0: 'div',
-      1: { className: 'form-container' },
+      1: { className: 'form-container', id: '12345' },
       2: [
         {
           0: 'div',
@@ -23,7 +23,7 @@ export const loginForm = {
         },
         {
           0: 'div',
-          1: { className: 'input-wrapper' },
+          1: { className: 'input-wrapper', id: 'password-wrapper' },
           2: [
             {
               0: 'label',
@@ -39,4 +39,11 @@ export const loginForm = {
       ]
     }
   ]
+}
+
+export const loginCatalog = {
+  '12345': { pos: '0.2.0' },
+  'email-input': { pos: '0.2.0.2.0.2.1' },
+  'password-input': { pos: '0.2.0.2.1.2.1' },
+  'password-wrapper': { pos: '0.2.0.2.1', id: 'password-wrapper' },
 }
