@@ -27,11 +27,12 @@ const formError = () => {
  * @returns {React Component} - Rendered Cascade Component
  */
 const Cascade = props => {
-  const { cascade, catalog, styles, getCatalog } = props
+  const { cascade, catalog, events, getCatalog, styles, } = props
   return (
     <Cascader
       cascade={ cascade }
       catalog={ catalog }
+      events={ events }
       styles={ styles }
       getCatalog={ getCatalog }
     />

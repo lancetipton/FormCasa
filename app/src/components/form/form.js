@@ -1,25 +1,14 @@
 import React from 'react'
 import { FormCasa } from 'formcasa'
-import { loginCascade, loginCatalog } from '../../models'
 
-
-const getCatalog = catalog => {
-
-  console.log(`---------- catalog item not is equal ----------`)
-  console.log(loginCatalog['12345'] === catalog['12345'])
-
-  console.log(`---------- catalog item is equal ----------`)
-  console.log(loginCatalog['password-wrapper'] === catalog['password-wrapper'])
-
-}
-
-export const Form = () => {
+export const Form = (props) => {
+  const { cascade, catalog, getCatalog, events } = props
   return (
     <FormCasa
-      cascade={ loginCascade }
-      catalog={ loginCatalog }
+      cascade={ cascade }
+      catalog={ catalog }
+      events={ events }
       getCatalog={ getCatalog }
     />
   )
-  
 }

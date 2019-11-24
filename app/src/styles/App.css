@@ -13,3 +13,7 @@
   border-bottom: 1px solid #121212;
 }
 
+h3 span {
+  font-size: 12px;
+  margin-left: 10px;
+}
