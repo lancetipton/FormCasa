@@ -16,7 +16,7 @@ export const buildNode = (type, props={}, children=[], catalog={}) => {
     cascade: {
       0: type,
       1: { id, key: id, ...props },
-      2: isArr(children) && children || [ children ]
+      2: isArr(children) && children || children && [ children ] || []
     },
     catalog: {
       ...catalog,

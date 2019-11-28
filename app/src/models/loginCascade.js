@@ -33,6 +33,15 @@ export const loginCascade = {
             {
               0: 'input',
               1: { className: 'input', name: 'password', id: 'password-input', type: 'password' }
+            },
+            {
+              0: 'br',
+              1: {},
+            },
+            {
+              0: 'button',
+              1: { className: 'button', name: 'button', id: 'button-input', type: 'button' },
+              2: [ 'Submit' ]
             }
           ]
         }

@@ -2896,6 +2896,11 @@ jsprim@^1.2.2:
   version "3.1.1"
   resolved "git+https://github.com/lancetipton/jsutils.git#bbe56d1948a3bbe3809259bc3bd93db8dcd0aba0"
 
+jsvalidator@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/jsvalidator/-/jsvalidator-1.2.0.tgz#03d823cf334c3633669dee1854c02cddd0a403be"
+  integrity sha512-+n50FI40/ztQGlj7duvFWfwHJv0+qr3X4YOH4E5fTVc0YvarD8Q0Knqt158j+WTu7rgF6iug8bRuFMlDWy3mWw==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"

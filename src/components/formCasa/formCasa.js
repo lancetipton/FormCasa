@@ -47,7 +47,6 @@ const Cascade = props => {
  * @returns
  */
 const addFormRoot = props => {
-
   // Get the cascade (children) and the catalog from the props
   const { cascade, catalog, ...args } = props
 

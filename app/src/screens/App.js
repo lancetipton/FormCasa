@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/App.css'
-import { Form, Container } from '../components'
-import { loginCascade, loginCatalog } from '../models'
+import { Form, Container, Flow } from '../components'
+import { loginCascade, loginCatalog, questionsFlow } from '../models'
 import { deepClone, reduceObj, isArr, isStr } from 'jsutils'
 
 const makeClone = (cascade) => {
@@ -78,6 +78,17 @@ const App = () => {
           getCatalog={ getLoginCatalog }
           events={ events }
         />
+      </Container>
+
+      <Container>
+        <h3>
+          Form Flow
+          <span>
+            ( Questions and Answers )
+          </span>
+        </h3>
+
+        <Flow flow={ questionsFlow } />
       </Container>
 
     </div>
