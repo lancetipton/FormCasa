@@ -8,12 +8,14 @@ const makeClone = (cascade) => {
   return reduceObj(deepClone(cascade), (key, value, copy) => {
     if(key === '0') copy[key] = value
     else if(key === '1'){
-      copy[key] = deepClone(value)
+      copy[key] = value
       copy[key].id && (copy[key].id = `${copy[key].id}-clone`)
       copy[key].htmlFor && ( copy[key].htmlFor = `${copy[key].htmlFor}-clone` )
     }
     else if(key === '2')
-      copy[key] = isArr(value) ? value.map(val => isStr(val) ? val : makeClone(val)) : value
+      copy[key] = !isArr(value)
+        ? value
+        : value.map(val => isStr(val) ? val : makeClone(val))
 
     return copy
   })
@@ -22,19 +24,18 @@ const makeClone = (cascade) => {
 const loginClone = makeClone(loginCascade)
 
 const getLoginCatalog = catalog => {
-  console.log(`---------- Index Catalog CB ----------`)
-  console.log(catalog)
-
+  // console.log(`---------- Index Catalog CB ----------`)
+  // console.log(catalog)
 }
 
 const onInput = (evt) => {
-  console.log(`---------- onInput Event ----------`)
-  console.log(evt)
+  // console.log(`---------- onInput Event ----------`)
+  // console.log(evt)
 }
 
 const onPassword = (evt) => {
-  console.log(`---------- onPassword Event ----------`)
-  console.log(evt)
+  // console.log(`---------- onPassword Event ----------`)
+  // console.log(evt)
 }
 
 const events = {
@@ -42,6 +43,10 @@ const events = {
     input: onInput,
     'password-input': onPassword
   }
+}
+
+const config = {
+  
 }
 
 const App = () => {
@@ -77,6 +82,7 @@ const App = () => {
           catalog={ loginCatalog }
           getCatalog={ getLoginCatalog }
           events={ events }
+          config={ config }
         />
       </Container>
 

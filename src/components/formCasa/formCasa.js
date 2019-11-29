@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from '../form'
 import { Register } from '../../services'
-import { buildNode } from '../../utils'
+import { buildNodeWithCatalog } from '../../utils'
 import { Cascader } from 'cascader'
 import { isArr, isObj } from 'jsutils'
 import { formModel } from '../../models'
@@ -27,7 +27,7 @@ const formError = () => {
  * @returns {React Component} - Rendered Cascade Component
  */
 const Cascade = props => {
-  const { cascade, catalog, events, getCatalog, styles, } = props
+  const { cascade, catalog, config, events, getCatalog, styles, } = props
   return (
     <Cascader
       cascade={ cascade }
@@ -35,6 +35,7 @@ const Cascade = props => {
       events={ events }
       styles={ styles }
       getCatalog={ getCatalog }
+      config={ config }
     />
   )
 }
@@ -51,7 +52,7 @@ const addFormRoot = props => {
   const { cascade, catalog, ...args } = props
 
   // Build the root cascade node from the formModel
-  const formCascade = buildNode(
+  const formCascade = buildNodeWithCatalog(
     formModel.cascade[0],
     formModel.cascade[1],
     props.cascade,

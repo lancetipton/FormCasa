@@ -9,18 +9,46 @@ import { uuid, isArr } from 'jsutils'
  *
  * @returns {Cascade Node} - Build node in cascade format
  */
-export const buildNode = (type, props={}, children=[], catalog={}) => {
-  const id = uuid()
+export const buildNode = (type, props={}, children=[]) => {
+  return {
+      0: type,
+      1: { id: props.id, key: props.id, ...props },
+      2: isArr(children) && children || children && [ children ] || []
+    }
+}
+
+/**
+ * Builds a Catalog with a lookup reference to the passed in ID
+ * @param {string} id - Id to add to the catalog
+ * @param {string} pos - Position in the cascade when the node exists
+ * @param {Object} [catalog={}] - Lookup object that holds extra props about an element
+ *
+ * @returns {Catalog Object} - Lookup object with lookup reference to the passed in Id
+ */
+export const buildCatalog = (id, pos, catalog={}) => {
+  id = id || uuid()
+  catalog[id] = {
+    id,
+    pos: pos || 0,
+    ...(catalog[id] || {}),
+  }
+  
+  return catalog
+}
+
+/**
+ * Builds a cascade node and matching catalog
+ * @param {string} type - Type of cascade node to build
+ * @param {Object} [props={}] - Props to add to the cascade node
+ * @param {Array} [children=[]] - Cascade node children
+ * @param {Object} [catalog={}] - existing Id lookup for cascade nodes
+ *
+ * @returns {Object} - Object containing the built node, and the matching catalog
+ */
+export const buildNodeWithCatalog = (type, props={}, children=[], catalog={}) => {
 
   return {
-    cascade: {
-      0: type,
-      1: { id, key: id, ...props },
-      2: isArr(children) && children || children && [ children ] || []
-    },
-    catalog: {
-      ...catalog,
-      [id]: { id, pos: 0 }
-    }
+    cascade: buildNode(type, {  ...props, id: props.id || uuid() }, children),
+    catalog: buildCatalog(props.id, props.pos, catalog)
   }
 }
